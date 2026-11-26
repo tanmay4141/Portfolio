@@ -143,7 +143,7 @@ export default function App() {
                 Comfortable from responsive UI through Express APIs and MongoDB.
               </p>
               <p className="meta">
-                {profile.location}
+                {profile.location} · {profile.rollNo}
                 <br />
                 {profile.email}
               </p>
@@ -203,6 +203,11 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      <footer className="site-footer">
+        <span>© 2026 {profile.name}</span>
+        <span>{profile.rollNo} · JECRC University</span>
+      </footer>
     </div>
   );
 }
