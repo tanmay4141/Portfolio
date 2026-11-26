@@ -68,6 +68,7 @@ export default function App() {
 
       <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="brand">TK</div>
+        <p className="roll-chip">{profile.rollNo}</p>
         <nav aria-label="Primary">
           {nav.map((item) => (
             <button
@@ -98,6 +99,9 @@ export default function App() {
         <section id="home" className="panel hero">
           <p className="pill">{profile.availability}</p>
           <h1>{profile.name}.</h1>
+          <p className="identity-line">
+            Roll No: {profile.rollNo} · JECRC University · Section O
+          </p>
           <p className="role">{profile.role}</p>
           <p className="tagline">{profile.tagline}</p>
           <div className="actions">
@@ -138,6 +142,7 @@ export default function App() {
           <div className="about-grid">
             <div className="card identity">
               <h3>{profile.name}</h3>
+              <p className="roll-meta">Roll No: {profile.rollNo}</p>
               <p>
                 CSE student at JECRC University building full-stack and AI-assisted web apps.
                 Comfortable from responsive UI through Express APIs and MongoDB.
@@ -177,7 +182,11 @@ export default function App() {
                 Internships, campus projects, or AI-assisted web builds — drop a note and I’ll
                 reply.
               </p>
-              <p className="meta">{profile.email}</p>
+              <p className="meta">
+                {profile.name} · {profile.rollNo}
+                <br />
+                {profile.email}
+              </p>
               <a href={profile.github} target="_blank" rel="noreferrer">
                 github.com/tanmay4141
               </a>
@@ -203,6 +212,10 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      <p className="owner-stamp" aria-label="Lab record owner">
+        {profile.name} · {profile.rollNo}
+      </p>
     </div>
   );
 }
